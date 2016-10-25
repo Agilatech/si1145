@@ -1,0 +1,24 @@
+{
+  "name": "@agilatech/si1145",
+  "version": "0.8.0",
+  "description": "Driver for the SI1145 Sensor",
+  "main": "./build/Release/si1145",
+  "gypfile": true,
+  "scripts": {
+    "install": "node-gyp rebuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Agilatech/si1145.git"
+  },
+  "keywords": [
+    "Sensor",
+    "SI1145",
+    "UV index",
+    "light",
+    "IR infrared",
+    "visible light"
+  ],
+  "author": "Scott Erholm <scott@agilatech.com>",
+  "license": "MIT"
+}
