@@ -22,7 +22,7 @@ const si1145 = new addon.Si1145('/dev/i2c-2', 0x60);
 ```
 #####Get basic device info
 ```
-const name = si1145.si1145();  // returns string with name of device
+const name = si1145.deviceName();  // returns string with name of device
 const version = si1145.deviceVersion(); // returns this software version
 const active = si1145.deviceActive(); // true if active, false if inactive
 const numVals =  si1145.deviceNumValues(); // returns the number of paramters sensed

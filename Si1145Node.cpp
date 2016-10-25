@@ -45,7 +45,7 @@ namespace si1145 {
         // InstanceTemplate is the ObjectTemplate assocated with the function New
         tpl->InstanceTemplate()->SetInternalFieldCount(1);
         
-        NODE_SET_PROTOTYPE_METHOD(tpl, "si1145", getSi1145);
+        NODE_SET_PROTOTYPE_METHOD(tpl, "deviceName", getDeviceName);
         NODE_SET_PROTOTYPE_METHOD(tpl, "deviceVersion", getDeviceVersion);
         NODE_SET_PROTOTYPE_METHOD(tpl, "deviceNumValues", getDeviceNumValues);
         NODE_SET_PROTOTYPE_METHOD(tpl, "typeAtIndex", getTypeAtIndex);
@@ -60,13 +60,13 @@ namespace si1145 {
         exports->Set(String::NewFromUtf8(isolate, "Si1145"), tpl->GetFunction());
     }
     
-    void Si1145Node::getSi1145(const FunctionCallbackInfo<Value>& args) {
+    void Si1145Node::getDeviceName(const FunctionCallbackInfo<Value>& args) {
         Isolate* isolate = args.GetIsolate();
         
-        std::string name = Si1145Drv::getSi1145();
-        Local<String> si1145 = String::NewFromUtf8(isolate, name.c_str());
+        std::string name = Si1145Drv::getDeviceName();
+        Local<String> deviceName = String::NewFromUtf8(isolate, name.c_str());
         
-        args.GetReturnValue().Set(si1145);
+        args.GetReturnValue().Set(deviceName);
     }
     
     void Si1145Node::getDeviceVersion(const FunctionCallbackInfo<Value>& args) {

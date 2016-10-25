@@ -155,7 +155,7 @@ public:
     Si1145Drv(std::string devfile, uint32_t addr);
     
     static std::string getVersion();
-    static std::string getSi1145();
+    static std::string getDeviceName();
     static int getNumValues();
     static std::string getTypeAtIndex(int index);
     static std::string getNameAtIndex(int index);

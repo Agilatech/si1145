@@ -29,7 +29,7 @@ std::string Si1145Drv::getVersion() {
     return name + " " + version;
 }
 
-std::string Si1145Drv::getSi1145() {
+std::string Si1145Drv::getDeviceName() {
     return name;
 }
 
