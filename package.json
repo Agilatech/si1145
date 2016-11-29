@@ -1,6 +1,6 @@
 {
   "name": "@agilatech/si1145",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "Driver for the SI1145 Sensor",
   "main": "./build/Release/si1145",
   "gypfile": true,
