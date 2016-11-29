@@ -46,6 +46,7 @@ namespace si1145 {
         tpl->InstanceTemplate()->SetInternalFieldCount(1);
         
         NODE_SET_PROTOTYPE_METHOD(tpl, "deviceName", getDeviceName);
+        NODE_SET_PROTOTYPE_METHOD(tpl, "deviceType", getDeviceType);
         NODE_SET_PROTOTYPE_METHOD(tpl, "deviceVersion", getDeviceVersion);
         NODE_SET_PROTOTYPE_METHOD(tpl, "deviceNumValues", getDeviceNumValues);
         NODE_SET_PROTOTYPE_METHOD(tpl, "typeAtIndex", getTypeAtIndex);
@@ -67,6 +68,15 @@ namespace si1145 {
         Local<String> deviceName = String::NewFromUtf8(isolate, name.c_str());
         
         args.GetReturnValue().Set(deviceName);
+    }
+    
+    void Si1145Node::getDeviceType(const FunctionCallbackInfo<Value>& args) {
+        Isolate* isolate = args.GetIsolate();
+        
+        std::string type = Si1145Drv::getDeviceType();
+        Local<String> deviceType = String::NewFromUtf8(isolate, type.c_str());
+        
+        args.GetReturnValue().Set(deviceType);
     }
     
     void Si1145Node::getDeviceVersion(const FunctionCallbackInfo<Value>& args) {

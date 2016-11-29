@@ -142,7 +142,9 @@
 #define SI1145_ADDR 0x60
 
 static const std::string name = "SI1145";
-static const std::string version = "0.9.0";
+static const std::string type = "sensor";
+
+static const std::string version = "0.9.2";
 
 static const int numValues = 3;
 
@@ -156,11 +158,13 @@ public:
     
     static std::string getVersion();
     static std::string getDeviceName();
+    static std::string getDeviceType();
     static int getNumValues();
     static std::string getTypeAtIndex(int index);
     static std::string getNameAtIndex(int index);
     
     bool isActive();
+    std::string getValueByName(std::string name);
     std::string getValueAtIndex(int index);
     
 protected:

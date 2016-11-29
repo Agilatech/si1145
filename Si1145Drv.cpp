@@ -33,6 +33,10 @@ std::string Si1145Drv::getDeviceName() {
     return name;
 }
 
+std::string Si1145Drv::getDeviceType() {
+    return type;
+}
+
 int Si1145Drv::getNumValues() {
     return numValues;
 }
@@ -55,6 +59,17 @@ std::string Si1145Drv::getNameAtIndex(int index) {
 
 bool Si1145Drv::isActive() {
     return this->active;
+}
+
+std::string Si1145Drv::getValueByName(std::string name) {
+
+    for (int i = 0; i < numValues; i++) {
+        if (name == valueNames[i]) {
+            return this->getValueAtIndex(i);
+        }
+    }
+    
+    return "none";
 }
 
 std::string Si1145Drv::getValueAtIndex(int index) {

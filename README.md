@@ -1,6 +1,6 @@
 ##Node addon for hardware SI1145 sensor
 
-#####This addon should work on any Linux platform, but has only been tested on BBB
+#####This addon should work on any Linux platform, and has been thoroughly tested on BBB
 
 ###Install
 
@@ -13,9 +13,9 @@ git clone https://github.com/Agilatech/si1145.git
 node-gyp configure build
 ```
 ###Usage
-#####Load the module and create and instance
+#####Load the module and create an instance
 ```
-const addon = require('si1145');
+const addon = require('@agilatech/si1145');
 
 // create an instance on the I2C bus 2 at address 0x60
 const si1145 = new addon.Si1145('/dev/i2c-2', 0x60);
@@ -23,11 +23,12 @@ const si1145 = new addon.Si1145('/dev/i2c-2', 0x60);
 #####Get basic device info
 ```
 const name = si1145.deviceName();  // returns string with name of device
+const name = si1145.deviceType();  // returns string with the generic type (sensor, actuator, motor, etc.)
 const version = si1145.deviceVersion(); // returns this software version
 const active = si1145.deviceActive(); // true if active, false if inactive
 const numVals =  si1145.deviceNumValues(); // returns the number of paramters sensed
 ```
-####Get paramter info and values
+####Get parameter info and values
 The SI1145 Sensor has IR, Visible, and UV parameters, so there are three corresponding indicies.
 ```
 // index 0 is IR light in lux
@@ -66,7 +67,7 @@ The resulting UV index is the standardized World Health Organization simplified 
 from 1 to 11.
 
 In any case, this sensor is uncalibrated, so none of the returned values should be considered accurate. The values
-returned are in the right ballpark withing a 15-20% tolerance.
+returned are in the right ballpark within a 15-20% tolerance.
 
 ###Dependencies
 * node-gyp
