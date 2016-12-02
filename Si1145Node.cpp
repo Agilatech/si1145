@@ -158,7 +158,7 @@ namespace si1145 {
         String::Utf8Value param0(args[0]->ToString());
         std::string devfile = std::string(*param0);
         
-        uint32_t addr = args[1]->IsUndefined() ? 0x40 : args[1]->NumberValue();
+        uint32_t addr = args[1]->IsUndefined() ? 0x60 : args[1]->NumberValue();
         
         // if invoked as costructor: 'new Si1145(...)'
         if (args.IsConstructCall()) {

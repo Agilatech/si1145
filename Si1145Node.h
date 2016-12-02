@@ -44,7 +44,7 @@ public:
 private:
     
     // args here should agree with driver constructor
-    explicit Si1145Node(uint32_t bus = 1) : bus_(bus) {}
+    explicit Si1145Node(std::string devfile = "/dev/i2c-1", uint32_t addr = 0x60) {}
     
     ~Si1145Node() {}
     
@@ -56,8 +56,6 @@ private:
     static v8::Persistent<v8::Function> constructor;
     
     static Si1145Drv *driver;
-    
-    uint32_t bus_;
     
     struct Work {
         uv_work_t  request;
