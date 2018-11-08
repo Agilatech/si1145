@@ -1,6 +1,6 @@
 {
   "name": "@agilatech/si1145",
-  "version": "0.9.4",
+  "version": "0.10.0",
   "description": "A driver for the SiLabs SI1145 Visible / IR / UV sensor",
   "main": "si1145.js",
   "directories": {
